@@ -1,0 +1,41 @@
+{% extends 'Medecin/medecin.html' %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier Patient</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Modifier Patient:{{patient.nom|upper}}</h2>
+            <h3>{{msg}}</h3>
+            <form method="POST" enctype="multipart/form-data" action="{% url 'update_patient' patient.pk%}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary col-12">Modifier</button>
+            </form>
+        </div>
+    </div>
+<style>
+    /* styles.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-container {
+  width: 80%; /* Adjust this value as needed */
+}
+
+</style>
+</body>
+</html>
+
+{%endblock%}
+

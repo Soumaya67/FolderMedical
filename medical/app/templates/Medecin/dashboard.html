@@ -1,0 +1,62 @@
+{% extends 'Medecin/medecin.html' %}
+{% block content %}
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="#">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active" href="#">Home</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class="fa-solid fa-bed-pulse fa-beat fa-2xl" style="color: #c92222;"></i>
+					<span class="text">
+						<h3>{{patient_count}}</h3>
+						<a href="{% url 'patients' %}">Employés</a>
+					</span>
+				</li>
+				<li>
+					<i class="fa-solid fa-user-doctor fa-beat fa-2xl" style="color: #4e73e4;"></i>
+					<span class="text">
+						<h3>{{medecin_count}}</h3>
+						<a href="#">Medecins</a>
+					</span>
+				</li>
+				<li>
+					<i class="fa-solid fa-user-nurse fa-beat fa-2xl" style="color: #ed50e7;"></i>
+					<span class="text">
+						<h3>{{infermier_count}}</h3>
+						<a href="#">Infermiers</a>
+					</span>
+				</li>
+				<br>
+				<li>
+					<i class="fa-solid fa-user-nurse fa-beat fa-2xl" style="color: #ed50e7;"></i>
+					<span class="text">
+						<h3>{{nombre_visites}}</h3>
+						<a href="#">Laboratoire</a>
+					</span>
+				</li>
+
+
+
+			</ul>
+
+
+
+		</main>
+		<!-- MAIN -->
+
+{%endblock%}
